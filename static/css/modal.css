@@ -1,0 +1,346 @@
+
+
+.Tab ul{
+	list-style-type:none;
+	padding-left:0px;
+	margin: 3% 0px; 
+
+}
+
+.subSub ul{
+
+	list-style-type:none;
+	padding-left:0px;
+	margin-top:0px;
+	margin-bottom:0px;
+}
+
+.subSub ul li{
+	padding-left:12%;
+	padding-top:5px;
+	padding-bottom:5px;
+	overflow:hidden;
+
+	-webkit-transition: all 200ms ease-in;
+	-moz-transition: all 200ms ease-in;
+	-ms-transition: all 200ms ease-in;
+	-o-transition: all 200ms ease-in;
+	transition: all 200ms ease-in;
+}
+
+.Tab ul{
+	background:rgb(255,255,255);
+}
+
+.estimatorContainer{
+	font-size:20px;
+	font-family: "arial";
+	margin:auto;
+}
+
+
+.subSub{
+	font-size:18px;
+	height:0px;
+	overflow:hidden;
+	-webkit-transition: all 200ms ease-in;
+	-moz-transition: all 200ms ease-in;
+	-ms-transition: all 200ms ease-in;
+	-o-transition: all 200ms ease-in;
+	transition: all 200ms ease-in;
+}
+
+
+.Tab{
+	background:rgb(91,194,206);
+	left:0;
+	position:absolute;
+	width:100%;
+	border:4px solid rgb(77,164,174);
+	border-radius : 4px;
+	-webkit-transition: all 200ms ease-in;
+	-moz-transition: all 200ms ease-in;
+	-ms-transition: all 200ms ease-in;
+	-o-transition: all 200ms ease-in;
+	transition: all 200ms ease-in;
+}
+
+.subContainer{
+	background:rgb(91,194,206);
+	left:0;
+	position:absolute;
+	width:100%;
+	border:4px solid rgb(77,164,174);
+	border-radius : 4px;
+	-webkit-transition: all 200ms ease-in;
+	-moz-transition: all 200ms ease-in;
+	-ms-transition: all 200ms ease-in;
+	-o-transition: all 200ms ease-in;
+	transition: all 200ms ease-in;
+}
+
+
+.subContainer-hide{
+	opacity:0;
+	
+}
+
+
+.Tab-hide{
+	opacity:0;
+
+}
+
+
+.tabs{
+	padding-left:10%;
+	color:rgb(136,136,136);
+	padding-top:12px;
+	padding-bottom:12px;
+
+	-webkit-transition: all 100ms ease-in;
+	-moz-transition: all 100ms ease-in;
+	-ms-transition: all 100ms ease-in;
+	-o-transition: all 100ms ease-in;
+	transition: all 100ms ease-in;
+}
+
+.result{
+	padding-left:10%;
+	color:rgb(136,136,136);
+	padding-top:12px;
+	padding-bottom:12px;
+
+	-webkit-transition: all 100ms ease-in;
+	-moz-transition: all 100ms ease-in;
+	-ms-transition: all 100ms ease-in;
+	-o-transition: all 100ms ease-in;
+	transition: all 100ms ease-in;
+}
+
+
+
+.notSelected:hover > .ssquare{
+	-o-transform:rotate(225deg);
+	-moz-transform:rotate(225deg);
+	-ms-transform: rotate(225deg);
+    -webkit-transform: rotate(225deg);
+    transform: rotate(225deg);
+
+	position:absolute;
+	background:rgb(185,185,185);
+	width:0.6em;
+	height:0.6em;
+	margin-top:0.3em;
+	left:4.2%;
+}
+
+.ssquare{
+	position:absolute;
+	background:rgb(255,255,255);
+	width:0px;
+	height:0px;
+	left:5%;
+	margin-top:-0.3em;
+
+	-webkit-transition: all 200ms ease-in;
+	-moz-transition: all 200ms ease-in;
+	-ms-transition: all 200ms ease-in;
+	-o-transition: all 200ms ease-in;
+	transition: all 200ms ease-in;
+}
+
+.ceselected:hover .ssquare{
+	-o-transform:rotate(225deg);
+	-moz-transform:rotate(225deg);
+	-ms-transform: rotate(225deg); 
+    -webkit-transform: rotate(225deg); 
+    transform: rotate(225deg);
+
+	position:absolute;
+	background:rgb(255,255,255);
+	width:0.6em;
+	height:0.6em;
+	margin-top:0.3em;
+	left:4.2%;
+}
+
+
+
+
+.result:hover{
+	color:rgb(255,255,255);
+	background:rgb(0,153,153);
+}
+.result:hover>.cost{
+	color:rgb(255,255,255);
+}
+
+.expanded{
+	color:rgb(255,255,255);
+	background:rgb(0,153,153);
+}
+.expanded .cost{
+	color:rgb(255,255,255);
+}
+
+
+.result .cesquare{
+	position:absolute;
+	width:0px;
+	height:0px;
+	border-left: 0.5em solid transparent;
+	border-right: 0.5em solid transparent;
+	border-top: 0.6em solid transparent;
+	position:absolute;
+	width:0em;
+	height:0em;
+	margin-top:0.3em;
+	left:4.2%;
+
+	-webkit-transition: all 200ms ease-in;
+	-moz-transition: all 200ms ease-in;
+	-ms-transition: all 200ms ease-in;
+	-o-transition: all 200ms ease-in;
+	transition: all 200ms ease-in;
+}
+
+.result:hover >.cesquare{
+	border-top: 0.6em solid white;
+}
+
+.expanded .cesquare{
+    -ms-transform: rotate(180deg); 
+    -webkit-transform: rotate(180deg); 
+    -o-transform: rotate(180deg);
+	-moz-transform: rotate(180deg);
+	transform: rotate(180deg);
+	border-top: 0.6em solid transparent;
+}
+
+.expanded:hover >.cesquare{
+	border-top: 0.6em solid white;
+}
+
+.subMenu{
+	margin-top:20px;
+	background:rgb(255,255,255);
+}
+
+.subMenu .n{
+	background:rgb(246,246,246);
+}
+
+
+ul .n{
+	background:rgb(246,246,246);
+
+}
+
+.c{
+	position:absolute;
+	background:rgb(255,255,255);
+	width:0px;
+	height:0px;
+	border-radius : 10px;
+	left:5%;
+	margin-top:-0.3em;
+
+	-webkit-transition: all 200ms ease-in;
+	-moz-transition: all 200ms ease-in;
+	-ms-transition: all 200ms ease-in;
+	-o-transition: all 200ms ease-in;
+	transition: all 200ms ease-in;
+}
+
+.tabs:hover >.c{
+	position:absolute;
+	background:rgb(255,255,255);
+	width:0.6em;
+	height:0.6em;
+	border-radius : 0.6em;
+	margin-top:0.3em;
+	left:4.2%;
+}
+
+.tabs:hover{
+	color:rgb(255,255,255);
+	background:rgb(0,153,153);
+}
+
+
+.ceprice{
+	position:relative;
+	margin-left:84%;
+	margin-top:-1.2em;
+
+	-webkit-transition: all 200ms ease-in;
+	-moz-transition: all 200ms ease-in;
+	-ms-transition: all 200ms ease-in;
+	-o-transition: all 200ms ease-in;
+	transition: all 200ms ease-in;
+}
+
+.cost{
+	color:rgb(136,136,136);
+	position:absolute;
+	left:86%;
+	width:13%;
+	margin-top:-1.2em;
+
+	-webkit-transition: all 100ms ease-in;
+	-moz-transition: all 100ms ease-in;
+	-ms-transition: all 100ms ease-in;
+	-o-transition: all 100ms ease-in;
+	transition: all 100ms ease-in;
+}
+
+.totalCost{
+	position:relative;
+	float :right;
+	margin-right:10%;
+	padding-bottom:10px;
+	color:rgb(255,255,255);
+}
+
+.static{
+	color:rgb(136,136,136);
+	padding-left:10%;
+	padding-right:5%;
+	padding-top:10px;
+	padding-bottom:10px;
+}
+
+.bottomMenu{
+padding-top:10px;
+}
+
+.backtoTab{
+	color:rgb(255,255,255);
+	margin-left:10%;
+	display:inline;
+
+	-webkit-transition: all 200ms ease-in;
+	-moz-transition: all 200ms ease-in;
+	-ms-transition: all 200ms ease-in;
+	-o-transition: all 200ms ease-in;
+	transition: all 200ms ease-in;
+}
+
+.backtoTab:hover{
+	color:rgb(47,134,144);
+}
+
+.notSelected{
+	color:rgb(165,165,165);
+
+}
+
+.notSelected .ceprice{
+	color:rgb(222,222,222);
+}
+
+.ceselected{
+	color:rgb(255,255,255);
+	background:rgb(57,177,172);
+}
