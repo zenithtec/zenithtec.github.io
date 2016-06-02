@@ -1,8 +1,3 @@
-{% load staticfiles %}
-{% load compress %}
-{% load i18n %}
-{% load dajaxice_templatetags %}
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,23 +23,22 @@
 	<!-- end: Facebook Open Graph -->
 
     <!-- start: CSS -->
-	{% compress css %}
-    <link href="{% static "css/bootstrap.min.css"  %}" rel="stylesheet">
-    <link href="{% static "css/bootstrap-responsive.min.css"  %}" rel="stylesheet">
-	<link href="{% static "css/style.css"  %}" rel="stylesheet">
-	<link href="{% static "css/slider1.css"  %}" rel="stylesheet">
-	<link href="{% static "css/slider2.css"  %}" rel="stylesheet">
-	<link href="{% static "css/slider3.css"  %}" rel="stylesheet">
-	<link href="{% static "css/icons.css"  %}" rel="stylesheet">
-	<link href="{% static "css/icons-color.css"  %}" rel="stylesheet">
-	<link href="{% static "css/social-icons.css"  %}" rel="stylesheet">
-	<link href="{% static "css/fancybox.css"  %}" rel="stylesheet">
-	<link href="{% static "css/font-awesome.css"  %}" rel="stylesheet">
-	<link href="{% static "css/font-awesome-ie7.css"  %}" rel="stylesheet">
+    <link href="static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="static/css/bootstrap-responsive.min.css" rel="stylesheet">
+	<link href="static/css/style.css" rel="stylesheet">
+	<link href="static/css/slider1.css" rel="stylesheet">
+	<link href="static/css/slider2.css" rel="stylesheet">
+	<link href="static/css/slider3.css" rel="stylesheet">
+	<link href="static/css/icons.css" rel="stylesheet">
+	<link href="static/css/icons-color.css" rel="stylesheet">
+	<link href="static/css/social-icons.css" rel="stylesheet">
+	<link href="static/css/fancybox.css" rel="stylesheet">
+	<link href="static/css/font-awesome.css" rel="stylesheet">
+	<link href="static/css/font-awesome-ie7.css" rel="stylesheet">
 	<!-- cost estimator css -->
-	<link href="{% static "css/modal.css"  %}" rel="stylesheet" >
-	<link href="{% static "css/magnific-popup.css"  %}" rel="stylesheet" >
-	{% endcompress %}
+	<link href="static/css/modal.css" rel="stylesheet" >
+	<link href="static/css/magnific-popup.css" rel="stylesheet" >
+	
          <style type="text/css">select { width:90px;}</style>
 	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Droid+Sans:400,700">
 	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Droid+Serif">
@@ -80,26 +74,18 @@
 			          		</a>
 
 			          		<div class="nav-collapse collapse">
-							<span><img src="{% static "img/zenith.png" %}"/></span>
+							<span><img src="static/img/zenith.png"/></span>
 			            		<ul class="nav">
-									<li><a href="#" class="home">{% trans "Home" %}</a></li>
-			              			<li><a href="#" class="services">{% trans 'Services' %}</a></li>
-									<li><a href="#" class="pricing">{% trans 'Pricing' %}</a></li>
-									<li><a href="#" class="portfolio">{% trans 'Portfolio' %}</a></li>
-									<li><a href="#" class="about">{% trans 'About' %}</a></li>
-									<li><a href="#" class="team">{% trans 'Team' %}</a></li>
-									<li><a href="#" class="contact">{% trans 'Contact' %}</a></li>
+									<li><a href="#" class="home">Home</a></li>
+			              			<li><a href="#" class="services">Services</a></li>
+									<li><a href="#" class="pricing">Pricing</a></li>
+									<li><a href="#" class="portfolio">Portfolio</a></li>
+									<li><a href="#" class="about">About</a></li>
+									<li><a href="#" class="team">Team</a></li>
+									<li><a href="#" class="contact">Contact</a></li>
 
-<li style="padding-top:5px;"><form style="margin:0;padding:0;" name=languageform action="{% url 'set_language' %}" method="POST">
-<input name="next" type="hidden" value="{% url 'home' %}" />
-{% csrf_token %}
-<select id="id_language" name="language" onChange="languageform.submit();">
-{% get_language_info_list for LANGUAGES as languages %}
-{% for language in languages %}
-<option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected="selected"{% endif %}>
-    {{ language.name_local }} ({{ language.code }})
-</option>
-{% endfor %}
+
+
 </select></form></li>
 			            		</ul>
 			          		</div>
@@ -131,41 +117,41 @@
 					<div class="sl-slide bg-1" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
 						<div class="sl-slide-inner">
 							<div class="deco" data-icon="B"></div>
-							<h2>{% trans 'Make Your Business Different' %}</h2>
-							<blockquote><p>{% trans 'Whenever you find yourself on the side of the majority, it is time to pause and reflect.' %}
-                                  </p><cite>{% trans "Mark Twain" %}</cite></blockquote>
+							<h2>Make Your Business Different</h2>
+							<blockquote><p>Whenever you find yourself on the side of the majority, it is time to pause and reflect.
+                                  </p><cite>Mark Twain</cite></blockquote>
 						</div>
 					</div>
 
 					<div class="sl-slide bg-2" data-orientation="vertical" data-slice1-rotation="10" data-slice2-rotation="-15" data-slice1-scale="1.5" data-slice2-scale="1.5">
 						<div class="sl-slide-inner">
 							<div class="deco" data-icon="T"></div>
-							<h2>{% trans 'Let Technology Lift You Up' %}</h2>
-							<blockquote><p>{% trans 'It has become appallingly obvious that our technology has exceeded our humanity.' %}</p><cite>{% trans 'Albert Einstein' %}</cite></blockquote>
+							<h2>Let Technology Lift You Up</h2>
+							<blockquote><p>It has become appallingly obvious that our technology has exceeded our humanity.</p><cite>Albert Einstein</cite></blockquote>
 						</div>
 					</div>
 
 					<div class="sl-slide bg-3" data-orientation="horizontal" data-slice1-rotation="3" data-slice2-rotation="3" data-slice1-scale="2" data-slice2-scale="1">
 						<div class="sl-slide-inner">
 							<div class="deco" data-icon="E"></div>
-							<h2>{% trans 'Right Tech Solution; High Efficiency' %}</h2>
-							<blockquote><p>{% trans 'Automation applied to an efficient operation will magnify the efficiency, and automation applied to an inefficient operation will magnify the inefficiency.' %}</p><cite>{% trans 'Bill Gates' %}</cite></blockquote>
+							<h2>Right Tech Solution; High Efficiency</h2>
+							<blockquote><p>Automation applied to an efficient operation will magnify the efficiency, and automation applied to an inefficient operation will magnify the inefficiency.</p><cite>Bill Gates</cite></blockquote>
 						</div>
 					</div>
 
 					<div class="sl-slide bg-4" data-orientation="vertical" data-slice1-rotation="-5" data-slice2-rotation="25" data-slice1-scale="2" data-slice2-scale="1">
 						<div class="sl-slide-inner">
 							<div class="deco" data-icon="F"></div>
-							<h2>{% trans 'Make Your Business Ready For The Future' %}</h2>
-							<blockquote><p>{% trans 'It is always wise to look ahead, but difficult to look further than you can see.' %}</p><cite>{% trans 'Winston Churchill' %}</cite></blockquote>
+							<h2>Make Your Business Ready For The Future</h2>
+							<blockquote><p>It is always wise to look ahead, but difficult to look further than you can see.</p><cite>Winston Churchill</cite></blockquote>
 						</div>
 					</div>
 
 					<div class="sl-slide bg-5" data-orientation="horizontal" data-slice1-rotation="-5" data-slice2-rotation="10" data-slice1-scale="2" data-slice2-scale="1">
 						<div class="sl-slide-inner">
 							<div class="deco" data-icon="P"></div>
-							<h2>{% trans 'We Are All About Professionalism' %}</h2>
-							<blockquote><p>{% trans 'It occured to me that eating is the only form of professionalism most people ever attain.' %}</p><cite>{% trans 'Don Delillo' %}</cite></blockquote>
+							<h2>We Are All About Professionalism</h2>
+							<blockquote><p>It occured to me that eating is the only form of professionalism most people ever attain.</p><cite>Don Delillo</cite></blockquote>
 						</div>
 					</div>
 				</div><!-- /sl-slider -->
@@ -204,7 +190,7 @@
 
 				<div id="page-title-inner">
 
-					<h2><span>{% trans 'Services' %}</span></h2>
+					<h2><span>Services</span></h2>
 
 				</div>	
 
@@ -217,7 +203,7 @@
         		<div class="span12">
 	
 					<p>
-						{% trans 'We provide a wide range of services including website/web application development, mobile application development, managing software/logistics software development, and all kinds computer-related services that you will need to boost your business. We also take over legacies which means if you have current websites, webapps or softwares that are outdated, we would like to take over to update them to your current needs.' %} 
+						We provide a wide range of services including website/web application development, mobile application development, managing software/logistics software development, and all kinds computer-related services that you will need to boost your business. We also take over legacies which means if you have current websites, webapps or softwares that are outdated, we would like to take over to update them to your current needs. 
 					</p>	
           			
         		</div>
@@ -231,7 +217,7 @@
         		<div class="span6">
 	
 					<p>
-						{% trans 'Zenith is gathered by a group of very experienced and skilled people. All of our team members have worked for top fortune 500 companies. We will bring the best industry practices to your business.' %}
+						Zenith is gathered by a group of very experienced and skilled people. All of our team members have worked for top fortune 500 companies. We will bring the best industry practices to your business.
 					</p>	
           			
         		</div>
@@ -239,7 +225,7 @@
 				<div class="span6">
 	
 					<p>
-						{% trans 'we specializes in analyzing your business needs, investigating the bottleneck of your business growth, and then adopt the right technologies to integrate with your business to make it shine. We have been doing this for over 5 years. We have clients from various industries.' %}
+						we specializes in analyzing your business needs, investigating the bottleneck of your business growth, and then adopt the right technologies to integrate with your business to make it shine. We have been doing this for over 5 years. We have clients from various industries.
 					</p>	
           			
         		</div>
@@ -253,9 +239,9 @@
         		<div class="span4">
           			<div class="icons-box">
 						<i class="fa fa-mobile"></i>
-						<h3>{% trans 'Mobile' %}</h3>
+						<h3>Mobile</h3>
 						<p>
-							{% trans 'Making your business available on Mobile platforms (iphone, android and windows phone) is crucial for your business to grow. According to statistics, more and more people are inclined to use mobile to retrieve information, and interact with the world.' %}
+							Making your business available on Mobile platforms (iphone, android and windows phone) is crucial for your business to grow. According to statistics, more and more people are inclined to use mobile to retrieve information, and interact with the world.
 						</p>
 						<div class="clearfix"></div>
 					</div>
@@ -264,9 +250,9 @@
         		<div class="span4">
           			<div class="icons-box">
 						<i class="fa fa-desktop"></i>
-						<h3>{% trans 'Web' %}</h3>
+						<h3>Web</h3>
 						<p>
-							{% trans 'Web should be the core of the presentation of your business. Assisted with cloud technology, web applications can make lots of things possible which were not even thought about before.' %}
+							Web should be the core of the presentation of your business. Assisted with cloud technology, web applications can make lots of things possible which were not even thought about before.
 						</p>
 						<div class="clearfix"></div>
 					</div>
@@ -275,9 +261,9 @@
         		<div class="span4">
           			<div class="icons-box">
 						<i class="fa fa-dollar"></i>
-						<h3>{% trans 'Business' %}</h3>
+						<h3>Business</h3>
 						<p>
-							{% trans 'Technologies are only the tools to boost your business, and knowing how to choose the right technologies for your busness is most important. Our team have deep understanding and extensive experience in different industries, including retail, manufacturing, services and etc.' %}
+							Technologies are only the tools to boost your business, and knowing how to choose the right technologies for your busness is most important. Our team have deep understanding and extensive experience in different industries, including retail, manufacturing, services and etc.
 						</p>
 						<div class="clearfix"></div>
 					</div>
@@ -311,7 +297,7 @@
 
 				<div id="page-title-inner">
 
-					<h2><span>{% trans 'Pricing' %}</span></h2>
+					<h2><span>Pricing</span></h2>
 
 				</div>	
 
@@ -319,7 +305,7 @@
 
 			<div id="popup-icon">
 			
-    			<a href="#cost-estimator" ><img class="cepic" src="{% static "img/ceicon.gif" %}" alt="" /><div class="cetext"> Cost Estimator</div></a>
+    			<a href="#cost-estimator" ><img class="cepic" src="static/img/ceicon.gif" alt="" /><div class="cetext"> Cost Estimator</div></a>
 
             </div>
 
@@ -328,12 +314,12 @@
 				<div class="estimatorContainer">
 					<div class="Tab">
 					  <ul>
-						<li class="tabs n"><div class="c" ></div>{% trans 'Brand New Website' %}</li>
-						<li class="tabs"><div class="c" ></div>{% trans 'Redesign Current Website' %}</li>
-						<li class="tabs n"><div class="c" ></div>{% trans 'Minor Updates and Changes on Current Webite' %}</li>
-						<li class="tabs"><div class="c" ></div>{% trans 'E-commerce Website (Package)' %}</li>
-						<li class="tabs n" ><div class="c" ></div>{% trans 'CMS Website (Package)' %}</li>
-						<li class="tabs" ><div class="c" ></div>{% trans 'Mobile App' %}</li>
+						<li class="tabs n"><div class="c" ></div>Brand New Website</li>
+						<li class="tabs"><div class="c" ></div>Redesign Current Website</li>
+						<li class="tabs n"><div class="c" ></div>Minor Updates and Changes on Current Webite</li>
+						<li class="tabs"><div class="c" ></div>E-commerce Website (Package)</li>
+						<li class="tabs n" ><div class="c" ></div>CMS Website (Package)</li>
+						<li class="tabs" ><div class="c" ></div>Mobile App</li>
 					  </ul>
 					</div>
 
@@ -341,87 +327,87 @@
 					<div class="subContainer subContainer-hide">
 						<div id="sub0" class="subMenu">
 							<div  id="typeSub" class="submenus n">
-								<div class="result notExpanded"><div class="cesquare" ></div>{% trans 'Type' %}<div class="cost">$0</div></div>
+								<div class="result notExpanded"><div class="cesquare" ></div>Type<div class="cost">$0</div></div>
 								<div  class="subSub" id="s">
 									<ul>
-									  <li  value="249" class="ceselected"><div class="ssquare" ></div>{% trans 'Simple static website (no database needed)' %}<div class="ceprice">$249</div></li>
-									  <li  value="499" class="notSelected"><div class="ssquare" ></div>{% trans 'Website I can edit myself' %}<div class="ceprice">$499</div></li>
-									  <li  value="899" class="notSelected"><div class="ssquare" ></div>{% trans 'Web app that needs a lot data reading and writing' %}<div class="ceprice">$899</div> </li>
+									  <li  value="249" class="ceselected"><div class="ssquare" ></div>Simple static website (no database needed)<div class="ceprice">$249</div></li>
+									  <li  value="499" class="notSelected"><div class="ssquare" ></div>Website I can edit myself<div class="ceprice">$499</div></li>
+									  <li  value="899" class="notSelected"><div class="ssquare" ></div>Web app that needs a lot data reading and writing<div class="ceprice">$899</div> </li>
 									</ul>
 								</div>
 							</div>
 
 							<div id="graphicsSub"class="submenus">
-								<div class="result notExpanded"><div class="cesquare" ></div>{% trans 'Graphics' %}<div class="cost">$0</div></div>
+								<div class="result notExpanded"><div class="cesquare" ></div>Graphics<div class="cost">$0</div></div>
 
 								<div class="subSub" id="m">
 									<ul>
-									  <li  value="25" class="notSelected"><div class="ssquare" ></div>{% trans 'I will supply web-ready images' %}<div class="ceprice">$25</div></li>
-									  <li  value="250" class="notSelected"><div class="ssquare" ></div>{% trans 'I need graphics created for website' %}<div class="ceprice">$250</div></li>
-									  <li  value="150" class="notSelected"><div class="ssquare" ></div>{% trans 'I need slideshow, gallery or multimedia on website' %}<div class="ceprice">$150</div></li>
+									  <li  value="25" class="notSelected"><div class="ssquare" ></div>I will supply web-ready images<div class="ceprice">$25</div></li>
+									  <li  value="250" class="notSelected"><div class="ssquare" ></div>I need graphics created for website<div class="ceprice">$250</div></li>
+									  <li  value="150" class="notSelected"><div class="ssquare" ></div>I need slideshow, gallery or multimedia on website<div class="ceprice">$150</div></li>
 									</ul>
 								</div>
 							</div>
 
 							<div id="featuresSub"class="submenus n">
-								<div class="result notExpanded"><div class="cesquare" ></div>{% trans 'Features' %}<div class="cost">$0</div></div>
+								<div class="result notExpanded"><div class="cesquare" ></div>Features<div class="cost">$0</div></div>
 
 								<div class="subSub" id="m">
 									<ul>
-										<li  value="150" class="notSelected"><div class="ssquare" ></div>{% trans 'Member registration' %}<div class="ceprice">$150</div></li>
-										<li  value="100" class="notSelected"><div class="ssquare" ></div>{% trans 'Blog' %}<div class="ceprice">$100</div></li>
-										<li  value="250" class="notSelected"><div class="ssquare" ></div>{% trans 'Discussion Forum' %}<div class="ceprice">$250</div></li>
-										<li  value="100" class="notSelected"><div class="ssquare" ></div>{% trans 'RSS News feed' %}<div class="ceprice">$100</div></li>
-										<li  value="150" class="notSelected"><div class="ssquare" ></div>{% trans 'Google maps integration' %}<div class="ceprice">$150</div></li>
-										<li  value="150" class="notSelected"><div class="ssquare" ></div>{% trans 'Site search' %}<div class="ceprice">$150</div></li>
-										<li  value="150" class="notSelected"><div class="ssquare" ></div>{% trans 'Email function' %}<div class="ceprice">$150</div></li>
-										<li  value="200" class="notSelected"><div class="ssquare" ></div>{% trans 'User file uploads' %}<div class="ceprice">$200</div></li>
-										<li  value="100" class="notSelected"><div class="ssquare" ></div>{% trans 'Google AdSense integration' %}<div class="ceprice">$100</div></li>
-										<li  value="350" class="notSelected"><div class="ssquare" ></div>{% trans 'Multilingural Site' %}<div class="ceprice">$350</div></li>
+										<li  value="150" class="notSelected"><div class="ssquare" ></div>Member registration<div class="ceprice">$150</div></li>
+										<li  value="100" class="notSelected"><div class="ssquare" ></div>Blog<div class="ceprice">$100</div></li>
+										<li  value="250" class="notSelected"><div class="ssquare" ></div>Discussion Forum<div class="ceprice">$250</div></li>
+										<li  value="100" class="notSelected"><div class="ssquare" ></div>RSS News feed<div class="ceprice">$100</div></li>
+										<li  value="150" class="notSelected"><div class="ssquare" ></div>Google maps integration<div class="ceprice">$150</div></li>
+										<li  value="150" class="notSelected"><div class="ssquare" ></div>Site search<div class="ceprice">$150</div></li>
+										<li  value="150" class="notSelected"><div class="ssquare" ></div>Email function<div class="ceprice">$150</div></li>
+										<li  value="200" class="notSelected"><div class="ssquare" ></div>User file uploads<div class="ceprice">$200</div></li>
+										<li  value="100" class="notSelected"><div class="ssquare" ></div>Google AdSense integration<div class="ceprice">$100</div></li>
+										<li  value="350" class="notSelected"><div class="ssquare" ></div>Multilingural Site<div class="ceprice">$350</div></li>
 									</ul>
 								</div>
 							</div>
 
 							<div id="designSub"class="submenus">
-								<div class="result notExpanded"><div class="cesquare" ></div>{% trans 'Responsive' %}<div class="cost">$0</div></div>
+								<div class="result notExpanded"><div class="cesquare" ></div>Responsive<div class="cost">$0</div></div>
 
 								<div class="subSub" id="s">
 									<ul>
-									    <li  value="200" class="notSelected"><div class="ssquare" ></div>{% trans 'Yes' %}<div class="ceprice">$200</div></li>
-										<li  value="0" class="ceselected"><div class="ssquare" ></div>{% trans 'No' %}<div class="ceprice">$0</div></li>
+									    <li  value="200" class="notSelected"><div class="ssquare" ></div>Yes<div class="ceprice">$200</div></li>
+										<li  value="0" class="ceselected"><div class="ssquare" ></div>No<div class="ceprice">$0</div></li>
 									</ul>
 								</div>
 							</div>
 
 							<div id="admininterfaceSub"class="submenus n">
-								<div class="result notExpanded"><div class="cesquare" ></div>{% trans 'Admin Site' %}<div class="cost">$300</div></div>
+								<div class="result notExpanded"><div class="cesquare" ></div>Admin Site<div class="cost">$300</div></div>
 
 								<div class="subSub" id="s">
 									<ul>
-									    <li  value="300" class="notSelected"><div class="ssquare" ></div>{% trans 'Yes' %}<div class="ceprice">$300</div></li>
-									    <li  value="0" class="ceselected"><div class="ssquare" ></div>{% trans 'No' %}<div class="ceprice">$0</div></li>
+									    <li  value="300" class="notSelected"><div class="ssquare" ></div>Yes<div class="ceprice">$300</div></li>
+									    <li  value="0" class="ceselected"><div class="ssquare" ></div>No<div class="ceprice">$0</div></li>
 									</ul>
 								</div>
 							</div>
 
 							<div id="SEOSub"class="submenus">
-								<div class="result notExpanded"><div class="cesquare" ></div>{% trans 'SEO' %}<div class="cost">$0</div></div>
+								<div class="result notExpanded"><div class="cesquare" ></div>SEO<div class="cost">$0</div></div>
 
 								<div class="subSub" id="s">
 									<ul>
-									    <li value="150" class="notSelected"><div class="ssquare" ></div>{% trans 'Yes' %}<div class="ceprice">$150</div></li>
-									    <li value="0" class="ceselected"><div class="ssquare" ></div>{% trans 'No' %}<div class="ceprice">$0</div></li>
+									    <li value="150" class="notSelected"><div class="ssquare" ></div>Yes<div class="ceprice">$150</div></li>
+									    <li value="0" class="ceselected"><div class="ssquare" ></div>No<div class="ceprice">$0</div></li>
 									</ul>
 								</div>
 							</div>
 
 							<div id="socialmediaSub"class="submenus n">
-								<div class="result notExpanded"><div class="cesquare" ></div>{% trans 'Social Media Integration' %}<div class="cost">$0</div></div>
+								<div class="result notExpanded"><div class="cesquare" ></div>Social Media Integration<div class="cost">$0</div></div>
 
 								<div class="subSub" id="s">
 									<ul>
-										<li value="100" class="notSelected"><div class="ssquare" ></div>{% trans 'Yes' %}<div class="ceprice">$100</div></li>
-										<li value="0" class="ceselected"><div class="ssquare" ></div>{% trans 'No' %}<div class="ceprice">$0</div></li>
+										<li value="100" class="notSelected"><div class="ssquare" ></div>Yes<div class="ceprice">$100</div></li>
+										<li value="0" class="ceselected"><div class="ssquare" ></div>No<div class="ceprice">$0</div></li>
 									</ul>
 								</div>
 							</div>
@@ -430,25 +416,25 @@
 
 						<div id="sub1"class="subMenu">
 							<div id="graphicsSub"class="submenus n">
-								<div class="result notExpanded"><div class="cesquare" ></div>{% trans 'Graphics' %}<div class="cost">$0</div></div>
+								<div class="result notExpanded"><div class="cesquare" ></div>Graphics<div class="cost">$0</div></div>
 
 								<div class="subSub" id="m">
 									<ul>
-										<li value="50" class="notSelected"><div class="ssquare" ></div>{% trans 'I will supply web-ready images' %}<div class="ceprice">$50</div></li>
-										<li value="250" class="notSelected"><div class="ssquare" ></div>{% trans 'I need graphics created for website' %}<div class="ceprice">$250</div></li>
-										<li value="100" class="notSelected"><div class="ssquare" ></div>{% trans 'I need slideshow, gallery or multimedia on website' %}<div class="ceprice">$100</div></li>
+										<li value="50" class="notSelected"><div class="ssquare" ></div>I will supply web-ready images<div class="ceprice">$50</div></li>
+										<li value="250" class="notSelected"><div class="ssquare" ></div>I need graphics created for website<div class="ceprice">$250</div></li>
+										<li value="100" class="notSelected"><div class="ssquare" ></div>I need slideshow, gallery or multimedia on website<div class="ceprice">$100</div></li>
 									</ul>
 								</div>
 							</div>
 
 
 							<div id="designSub"class="submenus">
-								<div class="result notExpanded"><div class="cesquare" ></div>{% trans 'Responsive' %}<div class="cost">$0</div></div>
+								<div class="result notExpanded"><div class="cesquare" ></div>Responsive<div class="cost">$0</div></div>
 
 								<div class="subSub" id="s">
 									<ul>
-										<li value="200" class="notSelected"><div class="ssquare" ></div>{% trans 'Yes' %}<div class="ceprice">$200</div></li>
-										<li value="0" class="ceselected"><div class="ssquare" ></div>{% trans 'No' %}<div class="ceprice">$0</div></li>
+										<li value="200" class="notSelected"><div class="ssquare" ></div>Yes<div class="ceprice">$200</div></li>
+										<li value="0" class="ceselected"><div class="ssquare" ></div>No<div class="ceprice">$0</div></li>
 									</ul>
 								</div>
 							</div>
@@ -456,36 +442,36 @@
 
 						<div id="sub2"class="subMenu n">
 							<div class="submenus static">
-								{% trans '$100 to $200 depending on cases' %}
+								$100 to $200 depending on cases
 							</div>
 						</div>
 
 						<div id="sub3"class="subMenu n">
 							<div class="submenus static">
-								{% trans 'We provide a thorough E-commerce solution.' %}<br/>
-								{% trans 'Includes: Responsive Design, Logo Design, SEO optimization, Admin portal, CMS, Management interface, Product management, Inventory control system, Coupon/discount system, marketing solution, Group email function, User management, Order management, Paying gateway integration, and etc.' %}
+								We provide a thorough E-commerce solution.<br/>
+								Includes: Responsive Design, Logo Design, SEO optimization, Admin portal, CMS, Management interface, Product management, Inventory control system, Coupon/discount system, marketing solution, Group email function, User management, Order management, Paying gateway integration, and etc.
 							</div>
 						</div>
 
 						<div id="sub4"class="subMenu">
 							<div  id="typeSub"class="submenus n">
-								<div class="result notExpanded"><div class="cesquare" ></div>{% trans 'Type' %}<div class="cost">$0</div></div>
+								<div class="result notExpanded"><div class="cesquare" ></div>Type<div class="cost">$0</div></div>
 
 								<div  class="subSub" id="s">
 								<ul>
-									<li value="1000" class="ceselected"><div class="ssquare" ></div>{% trans 'Simple CMS' %}<div class="ceprice">$1000</div></li>
-									<li value="2000" class="notSelected"><div class="ssquare" ></div>{% trans 'Complex CMS (> 5 editable sections on page)' %}<div class="ceprice">$2000</div></li>
+									<li value="1000" class="ceselected"><div class="ssquare" ></div>Simple CMS<div class="ceprice">$1000</div></li>
+									<li value="2000" class="notSelected"><div class="ssquare" ></div>Complex CMS (> 5 editable sections on page)<div class="ceprice">$2000</div></li>
 								</ul>
 								</div>
 							</div>
 
 							<div id="designSub"class="submenus">
-								<div class="result notExpanded"><div class="cesquare" ></div>{% trans 'Responsive' %}<div class="cost">$0</div></div>
+								<div class="result notExpanded"><div class="cesquare" ></div>Responsive<div class="cost">$0</div></div>
 
 								<div class="subSub" id="s">
 									<ul>
-										<li value="200" class="notSelected"><div class="ssquare" ></div>{% trans 'Yes' %}<div class="ceprice">$200</div></li>
-										<li value="0" class="ceselected"><div class="ssquare" ></div>{% trans 'No' %}<div class="ceprice">$0</div></li>
+										<li value="200" class="notSelected"><div class="ssquare" ></div>Yes<div class="ceprice">$200</div></li>
+										<li value="0" class="ceselected"><div class="ssquare" ></div>No<div class="ceprice">$0</div></li>
 									</ul>
 								</div>
 							</div>
@@ -493,16 +479,16 @@
 
 						<div id="sub5"class="subMenu n">
 							<div class="submenus static">
-								{% trans 'We do mobile apps for iOS, Android, and Windows phone. Please contact us for mobile app pricing.' %}
+								We do mobile apps for iOS, Android, and Windows phone. Please contact us for mobile app pricing.
 							</div>
 						</div>
 					
 						<div class="bottomMenu">
 							<div class="backtoTab">
-								{% trans 'Back' %}
+								Back
 							</div>
 							<div class="totalCost">
-								{% trans 'Total Price:' %}$0
+								Total Price:$0
 							</div>
 						</div>
 					</div>
@@ -519,23 +505,23 @@
 					<div class="span3">
 						<div class="pricing-table">
 							<div class="color-cccddd">
-								<h3>{% trans 'Website' %}</h3>
+								<h3>Website</h3>
 
-								<h4><span class="price">$199</span> <span class="time">{% trans 'Promo Only' %}</span></h4>
+								<h4><span class="price">$199</span> <span class="time">Promo Only</span></h4>
 
 								<ul>
-									<li>{% trans 'Branding Design' %}</li>
-									<li>{% trans 'Logo Design' %}</li>
-									<li>{% trans 'Free Hosting*' %}</li>
-									<li>{% trans 'Free Email Service*' %}</li>
-									<li>{% trans 'business integration' %}</li>
-									<li>{% trans 'SEO' %}</li>
+									<li>Branding Design</li>
+									<li>Logo Design</li>
+									<li>Free Hosting*</li>
+									<li>Free Email Service*</li>
+									<li>business integration</li>
+									<li>SEO</li>
 									
 						
-									<li>{% trans 'Multi-language support*' %}</li>
+									<li>Multi-language support*</li>
 									
 								</ul>
-								<a class="buy"><span>{% trans '*For small business only; must qualify for free tier policy; contact us for more information' %}</span></a>
+								<a class="buy"><span>*For small business only; must qualify for free tier policy; contact us for more information</span></a>
 							</div>
 						</div>
 					</div>
@@ -543,23 +529,23 @@
 					<div class="span3">
 						<div class="pricing-table">
 							<div class="color-666777">
-								<h3>{% trans 'Web Application' %}</h3>
+								<h3>Web Application</h3>
 
-								<h4><span class="price">$599*</span> <span class="time">{% trans 'Professional' %}</span></h4>
+								<h4><span class="price">$599*</span> <span class="time">Professional</span></h4>
 
 								<ul>
-									<li>{% trans 'Data Driven' %}</li>
-									<li>{% trans 'E-commerce' %}</li>
-									<li>{% trans 'SQL/NO-SQL' %}</li>
-									<li>{% trans 'Cloud-based deployment' %}</li>
-									<li>{% trans 'CMS support' %}</li>
-									<li>{% trans 'Scalability' %}</li>
-									<li>{% trans 'Mobile platform support' %}</li>
-									<li>{% trans 'High-traffic design' %}</li>
-									<li>{% trans '2 year maintenance' %}</li>
-									<li>{% trans '4 feature requests' %}</li>
+									<li>Data Driven</li>
+									<li>E-commerce</li>
+									<li>SQL/NO-SQL</li>
+									<li>Cloud-based deployment</li>
+									<li>CMS support</li>
+									<li>Scalability</li>
+									<li>Mobile platform support</li>
+									<li>High-traffic design</li>
+									<li>2 year maintenance</li>
+									<li>4 feature requests</li>
 								</ul>
-								<a class="buy"><span>{% trans '*Price may vary based on cases' %}</span></a>
+								<a class="buy"><span>*Price may vary based on cases</span></a>
 							</div>
 						</div>
 					</div>	
@@ -567,22 +553,22 @@
 					<div class="span3">
 						<div class="pricing-table best-option">
 							<div class="color-custom">
-								<h3>{% trans 'Web site/app' %}</h3>
+								<h3>Web site/app</h3>
 
-								<h4><span class="price">$999</span> <span class="time">{% trans 'Premium' %}</span></h4>
+								<h4><span class="price">$999</span> <span class="time">Premium</span></h4>
 								<ul>
-								   <li>{% trans 'features in Professional tier included' %}</li>
-									<li>{% trans '4 years maintenance' %}</li>
-									<li>{% trans '20 feature requests' %}</li>
-									<li>{% trans 'CDN' %}</li>
-									<li>{% trans 'Internationalization(I18N)' %}</li>
-									<li>{% trans 'Security design' %}</li>									
-									<li>{% trans 'Logging' %}</li>
-									<li>{% trans 'Infrastructure optimization' %}</li>
-									<li>{% trans 'Load balancing' %}</li>
-									<li>{% trans 'Dedicated servers' %}</li>
+								   <li>features in Professional tier included</li>
+									<li>4 years maintenance</li>
+									<li>20 feature requests</li>
+									<li>CDN</li>
+									<li>Internationalization(I18N)</li>
+									<li>Security design</li>									
+									<li>Logging</li>
+									<li>Infrastructure optimization</li>
+									<li>Load balancing</li>
+									<li>Dedicated servers</li>
 								</ul>
-								<a class="buy"><span>{% trans 'This solution is suitable for high traffic web application' %}</span></a>
+								<a class="buy"><span>This solution is suitable for high traffic web application</span></a>
 
 							</div>
 						</div>
@@ -591,23 +577,23 @@
 					<div class="span3">
 						<div class="pricing-table">
 							<div class="color-666777">
-								<h3>{% trans 'Big Data Application' %}</h3>
+								<h3>Big Data Application</h3>
 
-								<h4><span class="price">{% trans 'Call us for a free quote' %}</span> <span class="time">{% trans 'Ultimate' %}</span></h4>
+								<h4><span class="price">Call us for a free quote</span> <span class="time">Ultimate</span></h4>
 
 								<ul>
-									<li>{% trans 'NO-SQL + SQL backend' %}</li>
-									<li>{% trans 'High Concurrency' %}</li>
-									<li>{% trans 'multi-platform support' %}</li>
-									<li>{% trans 'Cloud deployment' %}</li>
-									<li>{% trans 'HTML5' %}</li>
-									<li>{% trans 'CSS3' %}</li>
-									<li>{% trans 'Non-blocking IO design' %}</li>
-									<li>{% trans 'Eventual data consistency' %}</li>
-									<li>{% trans 'Data availability' %}</li>
-									<li>{% trans 'horizontal scalability' %}</li>
+									<li>NO-SQL + SQL backend</li>
+									<li>High Concurrency</li>
+									<li>multi-platform support</li>
+									<li>Cloud deployment</li>
+									<li>HTML5</li>
+									<li>CSS3</li>
+									<li>Non-blocking IO design</li>
+									<li>Eventual data consistency</li>
+									<li>Data availability</li>
+									<li>horizontal scalability</li>
 								</ul>
-								<a class="buy"><span>{% trans 'Next generation application' %}</span></a>
+								<a class="buy"><span>Next generation application</span></a>
 							</div>
 						</div>
 					</div>
@@ -640,7 +626,7 @@
 
 				<div id="page-title-inner">
 
-					<h2><span>{% trans 'Portfolio' %}</span></h2>
+					<h2><span>Portfolio</span></h2>
 
 				</div>	
 
@@ -652,11 +638,11 @@
 				<div id="flex1" class="flexslider">
 					<ul class="slides">
 
-						<li><div class="picture"><img src="{% static "img/slider/slider1.jpg" %}" alt="" /></div></li>
+						<li><div class="picture"><img src="static/img/slider/slider1.jpg" alt="" /></div></li>
 
-						<li><div class="picture"><img src="{% static "img/slider/slider2.jpg" %}" alt="" /></div></li>
+						<li><div class="picture"><img src="static/img/slider/slider2.jpg" alt="" /></div></li>
 
-						<li><div class="picture"><img src="{% static "img/slider/slider3.jpg" %}" alt="" /></div></li>
+						<li><div class="picture"><img src="static/img/slider/slider3.jpg" alt="" /></div></li>
 
 					</ul>
 				</div>
@@ -665,21 +651,21 @@
 
 			<div id="filters">
 				<ul class="option-set" data-option-key="filter">
-					<li><a href="#filter" class="selected" data-option-value="*">{% trans 'All' %}</a></li>
+					<li><a href="#filter" class="selected" data-option-value="*">All</a></li>
 					<li>/</li>
-					<li><a href="#filter" data-option-value=".ecommerce">{% trans 'E-commerce' %}</a></li>
+					<li><a href="#filter" data-option-value=".ecommerce">E-commerce</a></li>
 					<li>/</li>
-					<li><a href="#filter" data-option-value=".admin">{% trans 'Admin' %}</a></li>
+					<li><a href="#filter" data-option-value=".admin">Admin</a></li>
 					<li>/</li>
-					<li><a href="#filter" data-option-value=".dashboard">{% trans 'Dashboard' %}</a></li>
+					<li><a href="#filter" data-option-value=".dashboard">Dashboard</a></li>
 					<li>/</li>
-					<li><a href="#filter" data-option-value=".website">{% trans 'Website' %}</a></li>
+					<li><a href="#filter" data-option-value=".website">Website</a></li>
 					<li>/</li>
-					<li><a href="#filter" data-option-value=".html5">{% trans 'HTML5' %}</a></li>
+					<li><a href="#filter" data-option-value=".html5">HTML5</a></li>
 					<li>/</li>
-					<li><a href="#filter" data-option-value=".css3">{% trans 'CSS3' %}</a></li>
+					<li><a href="#filter" data-option-value=".css3">CSS3</a></li>
 					<li>/</li>
-					<li><a href="#filter" data-option-value=".mobile">{% trans 'Mobile' %}</a></li>
+					<li><a href="#filter" data-option-value=".mobile">Mobile</a></li>
 				</ul>
 			</div>
 
@@ -688,10 +674,10 @@
 								
 				<div class="span4 portfolio-item html5 css3">
 					
-					<div class="picture"><a title="Smart Responsive Template"><img src="{% static "img/portfolio/smart.png" %}" alt=""/><div class="image-overlay-link"></div></a>
+					<div class="picture"><a title="Smart Responsive Template"><img src="static/img/portfolio/smart.png" alt=""/><div class="image-overlay-link"></div></a>
 					
 						<div class="item-description alt">
-							<h5><a href="">{% trans 'Smart Responsive Bootstrap Template' %}</a></h5>
+							<h5><a href="">Smart Responsive Bootstrap Template</a></h5>
 							<p>
 								
 							</p>
@@ -701,9 +687,9 @@
 
 				<div class="span4 portfolio-item html5 css3">
 					<div class="picture">
-						<a title="Title"><img src="{% static "img/portfolio/great.png" %}" alt=""/><div class="image-overlay-link"></div></a>
+						<a title="Title"><img src="static/img/portfolio/great.png" alt=""/><div class="image-overlay-link"></div></a>
 							<div class="item-description alt">
-								<h5><a href="">{% trans 'Great Responsive Bootstrap Template' %}</a></h5>
+								<h5><a href="">Great Responsive Bootstrap Template</a></h5>
 								<p>
 									
 							</p>
@@ -712,9 +698,9 @@
 				</div>
 
 				<div class="span4 portfolio-item website html5 css3">
-					<div class="picture"><a title="Title"><img src="{% static "img/portfolio/magnus.png" %}" alt=""/><div class="image-overlay-link"></div></a>
+					<div class="picture"><a title="Title"><img src="static/img/portfolio/magnus.png" alt=""/><div class="image-overlay-link"></div></a>
 						<div class="item-description alt">
-							<h5><a href="">{% trans 'Magnus Website' %}</a></h5>
+							<h5><a href="">Magnus Website</a></h5>
 							<p>
 							
 							</p>
@@ -723,9 +709,9 @@
 				</div>
 
 				<div class="span4 portfolio-item website html5 css3 ecommerce">
-					<div class="picture"><a title="Responsive Bootsrap Design"><img src="{% static "img/portfolio/MoMo-ecommerce.jpg" %}" alt=""/><div class="image-overlay-link"></div></a>
+					<div class="picture"><a title="Responsive Bootsrap Design"><img src="static/img/portfolio/MoMo-ecommerce.jpg" alt=""/><div class="image-overlay-link"></div></a>
 						<div class="item-description alt">
-							<h5><a href="">{% trans 'MoMo Online Shopping' %}</a></h5>
+							<h5><a href="">MoMo Online Shopping</a></h5>
 							<p>
 							
 							</p>
@@ -734,9 +720,9 @@
 				</div>
 
 				<div class="span4 portfolio-item admin dashboard">
-					<div class="picture"><a title="Title"><img src="{% static "img/portfolio/optimus.png" %}" alt=""/><div class="image-overlay-link"></div></a>
+					<div class="picture"><a title="Title"><img src="static/img/portfolio/optimus.png" alt=""/><div class="image-overlay-link"></div></a>
 						<div class="item-description alt">
-							<h5><a href="">{% trans 'E-commerce Shopping Site Dashboard' %}</a></h5>
+							<h5><a href="">E-commerce Shopping Site Dashboard</a></h5>
 							<p>
 							</p>	
 						</div>
@@ -744,9 +730,9 @@
 				</div>
 
 				<div class="span4 portfolio-item admin dashboard">
-					<div class="picture"><a title="Title"><img src="{% static "img/portfolio/perfectum.png" %}" alt=""/><div class="image-overlay-link"></div></a>
+					<div class="picture"><a title="Title"><img src="static/img/portfolio/perfectum.png" alt=""/><div class="image-overlay-link"></div></a>
 						<div class="item-description alt">
-							<h5><a href="">{% trans 'E-commerce Shopping Site Dashboard' %}</a></h5>
+							<h5><a href="">E-commerce Shopping Site Dashboard</a></h5>
 							<p>
 								
 							</p>
@@ -755,9 +741,9 @@
 				</div>
 
 				<div class="span4 portfolio-item website html5 css3">
-					<div class="picture"><a ><img src="{% static "img/portfolio/redbox.png" %}" alt=""/><div class="image-overlay-link"></div></a>
+					<div class="picture"><a ><img src="static/img/portfolio/redbox.png" alt=""/><div class="image-overlay-link"></div></a>
 						<div class="item-description alt">
-							<h5><a href="">{% trans 'Red Box Website' %}</a></h5>
+							<h5><a href="">Red Box Website</a></h5>
 							<p>
 								
 							</p>
@@ -767,10 +753,10 @@
 
 				<div class="span4 portfolio-item mobile">
 					
-					<div class="picture"><a title="Test Template"><img src="{% static "img/portfolio/android.png" %}" alt=""/><div class="image-overlay-link"></div></a>
+					<div class="picture"><a title="Test Template"><img src="static/img/portfolio/android.png" alt=""/><div class="image-overlay-link"></div></a>
 					
 						<div class="item-description alt">
-							<h5><a href="">{% trans 'Android App' %}</a></h5>
+							<h5><a href="">Android App</a></h5>
 							<p>
 								
 							</p>
@@ -780,10 +766,10 @@
 
 				<div class="span4 portfolio-item mobile">
 					
-					<div class="picture"><a title="Test Template"><img src="{% static "img/portfolio/ios.jpg" %}" alt=""/><div class="image-overlay-link"></div></a>
+					<div class="picture"><a title="Test Template"><img src="static/img/portfolio/ios.jpg" alt=""/><div class="image-overlay-link"></div></a>
 					
 						<div class="item-description alt">
-							<h5><a href="">{% trans 'IOS App' %}</a></h5>
+							<h5><a href="">IOS App</a></h5>
 							<p>
 								
 							</p>
@@ -816,7 +802,7 @@
 
 				<div id="page-title-inner">
 
-						<h2><span>{% trans 'About Us' %}</span></h2>
+						<h2><span>About Us</span></h2>
 
 				</div>	
 
@@ -830,15 +816,15 @@
 					
 					<!-- start: About Us -->
 					<div id="story">
-						<h3>{% trans 'Our Story' %}</h3>
+						<h3>Our Story</h3>
 						<p>
-							{% trans 'Zenith was formed by John Li in New York in 2013. As a pretty young company, we are different than others. First, we emphasize a lot on talents and teamwork, because we believe amazing can only happen when a group of talents know how to work together. Second, we embrace diversity. Our team members are from different backgrounds and cultures. Because of this, we are able to bring our services to different communities, and also allows us to understand the needs in different communities very well. Third, we brag on our professionalism. All of our team members are working for leading technology companies. We bring the cutting edge technologies along with best industry practices to our clients via Zenith. We put clients and quality of work in front of anything else.' %}
+							Zenith was formed by John Li in New York in 2013. As a pretty young company, we are different than others. First, we emphasize a lot on talents and teamwork, because we believe amazing can only happen when a group of talents know how to work together. Second, we embrace diversity. Our team members are from different backgrounds and cultures. Because of this, we are able to bring our services to different communities, and also allows us to understand the needs in different communities very well. Third, we brag on our professionalism. All of our team members are working for leading technology companies. We bring the cutting edge technologies along with best industry practices to our clients via Zenith. We put clients and quality of work in front of anything else.
 						</p>
 						<p>
-							{% trans 'Private sector is our main focus. We have noticed the technological needs have grown much faster in private sector than in public sector, and that is one of the reasons why Zenith was formed. We bridge the gap between business owners in private sector and nowadays technologies, so that those business owners can benefit from technologies that suit them best. With that being said, a deep understanding on what business owners really need, and mastery of technologies are the essential elements for the connection.' %}
+							Private sector is our main focus. We have noticed the technological needs have grown much faster in private sector than in public sector, and that is one of the reasons why Zenith was formed. We bridge the gap between business owners in private sector and nowadays technologies, so that those business owners can benefit from technologies that suit them best. With that being said, a deep understanding on what business owners really need, and mastery of technologies are the essential elements for the connection.
 						</p>
 						<p>
-							{% trans 'We treasure our clients, and grow with our clients. We manage to build a long term relationship with our clients, so we keep following up and providing free consultation to our clients even after the project has been delivered. We truly believe we are only as good as our clients are.' %} 
+							We treasure our clients, and grow with our clients. We manage to build a long term relationship with our clients, so we keep following up and providing free consultation to our clients even after the project has been delivered. We truly believe we are only as good as our clients are. 
 						</p>
 						
 					</div>	
@@ -846,15 +832,15 @@
 
 					<!-- start: History -->
 					<div id="history">
-						<h3>{% trans 'Characteristics' %}</h3>
+						<h3>Characteristics</h3>
 						<p>
-							<span class="dropcap">D</span>{% trans 'Diversity is a key characteristic here in Zenith. Team members are from different backgrounds (most are bilingual), working in different industries, but all have a deep understanding on how to integrate business and technologies. We are not just pure computer engineers, but engineers who understand business.' %}
+							<span class="dropcap">D</span>Diversity is a key characteristic here in Zenith. Team members are from different backgrounds (most are bilingual), working in different industries, but all have a deep understanding on how to integrate business and technologies. We are not just pure computer engineers, but engineers who understand business.
 						</p>
 						<p>
-							<span class="dropcap color">T</span>{% trans 'Talent is what we appreciate. Zenith is growing, and bringing more talented people on board. We believe when talent meets hardwork and teamwork, it is when amazing things happen. As a team, we share knowledge, help each other, and move forward together.' %}
+							<span class="dropcap color">T</span>Talent is what we appreciate. Zenith is growing, and bringing more talented people on board. We believe when talent meets hardwork and teamwork, it is when amazing things happen. As a team, we share knowledge, help each other, and move forward together.
 						</p>
 						<p>
-							<span class="dropcap dark">P</span>{% trans 'Professionalism is what our team members bring to work. We bring the industsy best practice to what we work in Zenith, which turns out to be a very beneficial thing for our clients. We bring our clients what industry-leading companies are using.' %}
+							<span class="dropcap dark">P</span>Professionalism is what our team members bring to work. We bring the industsy best practice to what we work in Zenith, which turns out to be a very beneficial thing for our clients. We bring our clients what industry-leading companies are using.
 						</p>
 						
 					</div>	
@@ -871,34 +857,34 @@
 				<div class="span12">
 					
 					<!-- start: Skills -->
-			       	<h3>{% trans 'Our Skills' %}</h3>
+			       	<h3>Our Skills</h3>
 			       	<ul class="progress-bar">
 						<li>
-			            	<h5>{% trans 'Web Development' %} ( 90% )</h5>
+			            	<h5>Web Development ( 90% )</h5>
 			          	</li>
 			        	<li>
 			            	<div class="meter"><span style="width: 90%"></span></div><!-- Edite width here -->
 			          	</li>
 						<li>
-			            	<h5>{% trans 'Business Integration' %} ( 80% )</h5>
+			            	<h5>Business Integration ( 80% )</h5>
 			          	</li>
 			        	<li>
 			            	<div class="meter"><span style="width: 80%"></span></div><!-- Edite width here -->
 			          	</li>
 						<li>
-			            	<h5>{% trans 'System Development' %} ( 60% )</h5>
+			            	<h5>System Development ( 60% )</h5>
 			          	</li>
 			          	<li>
 			            	<div class="meter"><span style="width: 60%"></span></div><!-- Edite width here -->
 			          	</li>
 						<li>
-			            	<h5>{% trans 'Branding' %} ( 70% )</h5>
+			            	<h5>Branding ( 70% )</h5>
 			          	</li>
 			          	<li>
 			            	<div class="meter"><span style="width: 70%"></span></div><!-- Edite width here -->
 			          	</li>
 			          	<li>
-			            	<h5>{% trans 'SEO Optmization' %} ( 85% )</h5>
+			            	<h5>SEO Optmization ( 85% )</h5>
 			          	</li>
 						<li>
 			            	<div class="meter"><span style="width: 85%"></span></div><!-- Edite width here -->
@@ -954,12 +940,12 @@
 				<!-- start: About Member -->
 				<div class="span3">
 					<div class="avatar">
-						<img class="img-circle" src="{% static "img/john.png" %}" alt="team member">
+						<img class="img-circle" src="static/img/john.png" alt="team member">
 					</div>	
 					<div class="team-name">John Li</div>
-					<div class="position">{% trans 'Web Developer' %}</div>
+					<div class="position">Web Developer</div>
 					<p>
-						{% trans 'John has many years experience on database design, website development, and web deployment. John mainly program in Python, C, C#/Java, and Scala. He develops on Django, and has extensive experience on various SQL and NO-SQL databases. He is currently working for a international Law firm as a legal data consultant.' %}
+						John has many years experience on database design, website development, and web deployment. John mainly program in Python, C, C#/Java, and Scala. He develops on Django, and has extensive experience on various SQL and NO-SQL databases. He is currently working for a international Law firm as a legal data consultant.
 					</p>
 					<div class="social_profiles">
 						<ul class="social-bookmarks">
@@ -977,12 +963,12 @@
 				<!-- start: About Member -->
 				<div class="span3">
 					<div class="avatar">
-						<img class="img-circle" src="{% static "img/justin.png" %}" alt="team member">
+						<img class="img-circle" src="static/img/justin.png" alt="team member">
 					</div>	
 					<div class="team-name">Justin Lee</div>
-					<div class="position">{% trans 'Web Designer' %}</div>
+					<div class="position">Web Designer</div>
 					<p>
-						{% trans 'Justin is currently working in a leading gaming company as a front end web designer. He is using SASS that is based on bootstrap and HTML5/CSS3 with responsive style. Having been designing many looking-sharp front-end for websites, Justin is bringing his unique aesthetic and expertise to Zenith.' %}
+						Justin is currently working in a leading gaming company as a front end web designer. He is using SASS that is based on bootstrap and HTML5/CSS3 with responsive style. Having been designing many looking-sharp front-end for websites, Justin is bringing his unique aesthetic and expertise to Zenith.
 					</p>
 					<div class="social_profiles">
 						<ul class="social-bookmarks">
@@ -998,12 +984,12 @@
 				<!-- start: About Member -->
 				<div class="span3">
 					<div class="avatar">
-						<img class="img-circle" src="{% static "img/tom.png" %}" alt="team member">
+						<img class="img-circle" src="static/img/tom.png" alt="team member">
 					</div>	
 					<div class="team-name">Hang Ye</div>
-					<div class="position">{% trans 'Project Coordinator' %}</div>
+					<div class="position">Project Coordinator</div>
 					<p>
-						{% trans "Tom plays a key role in all the projects in Zenith. He is the communication channel, and his job responsibility is to ensure client's requirements can be fully and correctly implemented during project development. Tom is also in charge of QC/QA of most projects." %}
+						Tom plays a key role in all the projects in Zenith. He is the communication channel, and his job responsibility is to ensure client's requirements can be fully and correctly implemented during project development. Tom is also in charge of QC/QA of most projects.
 					</p>
 					<div class="social_profiles">
 						<ul class="social-bookmarks">
@@ -1022,12 +1008,12 @@
 				<!-- start: About Member -->
 				<div class="span3">
 					<div class="avatar">
-						<img class="img-circle" src="{% static "img/samantha.gif" %}" alt="team member">
+						<img class="img-circle" src="static/img/samantha.gif" alt="team member">
 					</div>	
 					<div class="team-name">Samantha Cooley</div>
-					<div class="position">{% trans 'Visual Designer' %}</div>
+					<div class="position">Visual Designer</div>
 					<p>
-						{% trans 'Samantha specializes in logo and visual design. She has been awarded many times in design industry. Her work can be seen in numerous magazines and advertisements. Samantha oversees Branding and Marketing service in Zenith.' %} 
+						Samantha specializes in logo and visual design. She has been awarded many times in design industry. Her work can be seen in numerous magazines and advertisements. Samantha oversees Branding and Marketing service in Zenith. 
 					</p>
 					<div class="social_profiles">
 						<ul class="social-bookmarks">
@@ -1059,12 +1045,12 @@
 
 				<div class="span3">
 					<div class="avatar">
-						<img class="img-circle" src="{% static "img/rsz_james.jpg" %}" alt="team member">
+						<img class="img-circle" src="static/img/rsz_james.jpg" alt="team member">
 					</div>	
 					<div class="team-name">James Kresky</div>
-					<div class="position">{% trans 'Web Infrastructure Engineer' %}</div>
+					<div class="position">Web Infrastructure Engineer</div>
 					<p>
-						{% trans 'James has been developing and deploying data-driven web applications for 8 years. Currently working as a project leader in a leading cloud service company, James has very extensive experience with server side infrastructure, deployment,system administration and networking.' %}
+						James has been developing and deploying data-driven web applications for 8 years. Currently working as a project leader in a leading cloud service company, James has very extensive experience with server side infrastructure, deployment,system administration and networking.
 					</p>
 					<div class="social_profiles">
 						<ul class="social-bookmarks">
@@ -1081,12 +1067,12 @@
 				<!-- start: About Member -->
 				<div class="span3">
 					<div class="avatar">
-						<img class="img-circle" src="{% static "img/mike.png" %}" alt="team member">
+						<img class="img-circle" src="static/img/mike.png" alt="team member">
 					</div>	
 					<div class="team-name">Mike Zopp</div>
-					<div class="position">{% trans 'Mobile Applicaton Developer' %}</div>
+					<div class="position">Mobile Applicaton Developer</div>
 					<p>
-						{% trans 'Mike is a very experienced web application developer. Mike has been shifted from web development to mobile development 6 years ago, and has developed many top-rated mobile applications for Android and iOS. He is mainly in charge of mobile app development in Zenith.' %}
+						Mike is a very experienced web application developer. Mike has been shifted from web development to mobile development 6 years ago, and has developed many top-rated mobile applications for Android and iOS. He is mainly in charge of mobile app development in Zenith.
 					</p>
 					<div class="social_profiles">
 						<ul class="social-bookmarks">
@@ -1138,7 +1124,7 @@
 
 				<div id="page-title-inner">
 
-						<h2><span>{% trans 'Contact' %}</span></h2>
+						<h2><span>Contact</span></h2>
 
 				</div>	
 
@@ -1153,8 +1139,8 @@
 					<!-- start: Contact Info -->
 					<b>Zenith Technology</b> •			
 					
-					{% trans 'Phone: (646) 350-9881' %} •			
-					{% trans 'Web: zen-tec.us' %} •	info@zen-tec.us
+					Phone: (646) 350-9881 •			
+					Web: zen-tec.us •	info@zen-tec.us
 					<!-- end: Contact Info -->
 				
 				</div>	
@@ -1188,7 +1174,7 @@
 		  	                              					      {% endfor %}
 						  
 								<div class="actions">
-									<button tabindex="3" type="button" class="btn btn-succes btn-large" onclick="send_form();">{% trans "Send message" %}</button><div id="feedback" style="color:red;"></div>
+									<button tabindex="3" type="button" class="btn btn-succes btn-large" onclick="send_form();">Send message</button><div id="feedback" style="color:red;"></div>
 									
 								</div>								
 							</fieldset>
@@ -1212,7 +1198,7 @@
 						<div id="map" class="google-map google-map-full"></div>
 					</div>
 					<script src="http://maps.google.com/maps/api/js?sensor=true"></script>
-					<script src="{% static "js/jquery.gmap.min.js"  %}"></script>
+					<script src="static/js/jquery.gmap.min.js"></script>
 					<script type="text/javascript">
 						$('#map').gMap({
 							controls: {
@@ -1283,7 +1269,7 @@
 	
 		
 		<div id="copyright">
-			Zenith Technology LLC &copy; 2013-{% now "Y" %} <a href="" alt="Bootstrap Themes"></a> {% trans 'All Rights Reserved' %} <img src="{% static "img/usa.png" %}" alt="Poland" style="margin-top:-4px">
+			Zenith Technology LLC &copy; 2013-{% now "Y <a href="" alt="Bootstrap Themes"></a> All Rights Reserved <img src="static/img/usa.png" alt="Poland" style="margin-top:-4px">
 		</div>
 		<div id="social">
 			<a href="" rel="tooltip" title="Facebook" class="facebook">Facebook</a>
@@ -1302,28 +1288,28 @@
 <!-- Placed at the end of the document so the pages load faster -->
 {% dajaxice_js_import %}
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script type="text/javascript" src="{% static "js/jquery.browser.min.js" %}"></script>
-<script type="text/javascript" src="{% static "js/isotope.js" %}"></script>
-<script type="text/javascript" src="{% static "js/jquery.imagesloaded.js" %}"></script>
-<script type="text/javascript" src="{% static "js/bootstrap.min.js" %}"></script>
-<script type="text/javascript" src="{% static "js/flexslider.js" %}"></script>
-<script type="text/javascript" src="{% static "js/carousel.js" %}"></script>
-<script type="text/javascript" src="{% static "js/fancybox.js" %}"></script>
-<script type="text/javascript" src="{% static "js/twitter.js" %}"></script>
-<script type="text/javascript" src="{% static "js/modernizr.custom.79639.js" %}"></script>
-<script type="text/javascript" src="{% static "js/jquery.ba-cond.min.js" %}"></script>
-<script type="text/javascript" src="{% static "js/jquery.slitslider.js" %}"></script>
-<script type="text/javascript" src="{% static "dajax/jquery.dajax.core.js" %}"></script>
-<script type="text/javascript" src="{% static "js/excanvas.js" %}"></script>
-<script type="text/javascript" src="{% static "js/jquery.flot.min.js" %}"></script>
-<script type="text/javascript" src="{% static "js/jquery.flot.pie.min.js" %}"></script>
-<script type="text/javascript" src="{% static "js/jquery.flot.stack.js" %}"></script>
-<script type="text/javascript" src="{% static "js/jquery.flot.resize.min.js" %}"></script>
-<script type="text/javascript" src="{% static "js/jquery.ba-serializeobject.min.js" %}"></script>
-<script defer="defer" src="{% static "js/custom.js" %}"></script>
+<script type="text/javascript" src="static/js/jquery.browser.min.js"></script>
+<script type="text/javascript" src="static/js/isotope.js"></script>
+<script type="text/javascript" src="static/js/jquery.imagesloaded.js"></script>
+<script type="text/javascript" src="static/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="static/js/flexslider.js"></script>
+<script type="text/javascript" src="static/js/carousel.js"></script>
+<script type="text/javascript" src="static/js/fancybox.js"></script>
+<script type="text/javascript" src="static/js/twitter.js"></script>
+<script type="text/javascript" src="static/js/modernizr.custom.79639.js"></script>
+<script type="text/javascript" src="static/js/jquery.ba-cond.min.js"></script>
+<script type="text/javascript" src="static/js/jquery.slitslider.js"></script>
+<script type="text/javascript" src="static/dajax/jquery.dajax.core.js"></script>
+<script type="text/javascript" src="static/js/excanvas.js"></script>
+<script type="text/javascript" src="static/js/jquery.flot.min.js"></script>
+<script type="text/javascript" src="static/js/jquery.flot.pie.min.js"></script>
+<script type="text/javascript" src="static/js/jquery.flot.stack.js"></script>
+<script type="text/javascript" src="static/js/jquery.flot.resize.min.js"></script>
+<script type="text/javascript" src="static/js/jquery.ba-serializeobject.min.js"></script>
+<script defer="defer" src="static/js/custom.js"></script>
 <!-- cost estimator js -->
-<script type="text/javascript" src="{% static "js/jquery.magnific-popup.js" %}"></script>
-<script type="text/javascript" src="{% static "js/modal.js" %}"></script>
+<script type="text/javascript" src="static/js/jquery.magnific-popup.js"></script>
+<script type="text/javascript" src="static/js/modal.js"></script>
 
 <script type="text/javascript">
 function send_form(){
