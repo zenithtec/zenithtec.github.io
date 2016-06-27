@@ -1554,6 +1554,47 @@ a.buy:hover {
 	font-weight: normal;
 }
 
+#popup-icon{
+	text-align: center;
+	margin-top:-30px;
+	margin-bottom:30px;
+}
+
+#popup-icon a:hover{
+	text-decoration: none;
+}
+
+#popup-icon a:hover .cetext {
+	opacity: 1;
+}
+
+#popup-icon a:hover .cepic{
+	opacity: 0;
+}
+
+
+.cepic{
+
+	-webkit-transition: all 200ms ease-in;
+	-moz-transition: all 200ms ease-in;
+	-ms-transition: all 200ms ease-in;
+	-o-transition: all 200ms ease-in;
+	transition: all 200ms ease-in;
+}
+
+.cetext{
+
+	margin-top: -35px;
+	font-size: 19px;
+	color: rgb(255,255,255);
+	opacity: 0;
+	-webkit-transition: all 200ms ease-in;
+	-moz-transition: all 200ms ease-in;
+	-ms-transition: all 200ms ease-in;
+	-o-transition: all 200ms ease-in;
+	transition: all 200ms ease-in;
+}
+
 /* Color Schemes
 =================================================================== */
 
